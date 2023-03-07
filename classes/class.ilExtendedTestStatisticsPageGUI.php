@@ -151,6 +151,12 @@ class ilExtendedTestStatisticsPageGUI
 			return false;
 		}
 
+		if ($this->testObj->getOfflineStatus() == 1) {
+			$properties = array();
+			$properties[] = array('property' => 'Status', 'value' => 'Offline');
+			$this->tpl->setAlertProperties($properties);
+		}
+
 		return true;
 	}
 
